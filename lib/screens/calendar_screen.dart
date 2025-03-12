@@ -10,9 +10,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  String _bookingMessage = "Select a date to see booking details."; // Default message
+  String _bookingMessage = "Select a date to see booking details."; 
 
-  // Define the dates that should have an icon
   final Set<DateTime> _iconDays = {
     DateTime(2025, 3, 4),
     DateTime(2025, 3, 5),
@@ -21,7 +20,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
     DateTime(2025, 3, 20),
   };
 
-  // Booked Beer Party Days for Table 3 & 4
   final Map<DateTime, String> _bookedBeerParties = {
     DateTime(2025, 3, 4): "Table 3",
      DateTime(2025, 3, 5): "Table 3 & 4",
@@ -61,7 +59,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     _selectedDay = selectedDay;
                     _focusedDay = focusedDay;
                   });
-                  _updateBookingMessage(selectedDay); // Update the message
+                  _updateBookingMessage(selectedDay); 
                 },
                 headerStyle: const HeaderStyle(
                   formatButtonVisible: false,
@@ -85,7 +83,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ),
                 calendarBuilders: CalendarBuilders(
                   defaultBuilder: (context, day, focusedDay) {
-                    // Check if the current day should have an icon
                     bool hasIcon = _iconDays.any((d) =>
                         d.year == day.year && d.month == day.month && d.day == day.day);
 
@@ -98,21 +95,19 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       alignment: Alignment.center,
                       child: Stack(
                         children: [
-                          // Date number in center
                           Center(
                             child: Text(
                               '${day.day}',
                               style:const TextStyle(fontSize: 16),
                             ),
                           ),
-                          // Cup icon positioned at top right
                           if (hasIcon)
                            const Positioned(
                               top: 2,
                               right: 2,
                               child: Icon(
-                                Icons.emoji_events, // Cup icon
-                                size: 14, // Adjusted size to avoid overlap
+                                Icons.emoji_events, 
+                                size: 14, 
                                 color: Colors.black,
                               ),
                             ),
@@ -123,7 +118,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ),
               ),
             ),
-            // Booking message section
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(

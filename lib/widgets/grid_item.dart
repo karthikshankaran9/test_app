@@ -13,7 +13,7 @@ class GridItem extends StatelessWidget {
     required this.onTap,
   });
 
-  // @override
+   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
@@ -28,8 +28,8 @@ class GridItem extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: Icon(icon, size: 30, color: Color.fromRGBO(5, 5, 5, 1)),
         ),
-        SizedBox(height: 5),
-        Text(title, style: TextStyle(fontSize: 14)),
+        const SizedBox(height: 5),
+        Text(title, style:const TextStyle(fontSize: 14)),
       ],
       ),
     );

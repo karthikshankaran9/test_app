@@ -14,7 +14,7 @@ class ModulesScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF6F6F6),
+      backgroundColor: Colors.blue[900],
       body: SafeArea(
         child: Column(
           children: [
@@ -79,7 +79,7 @@ class ModulesScreens extends StatelessWidget {
       ),
     );
   }
-  Widget _buildIconWithText(IconData icon, String text, {Color iconColor = const Color.fromRGBO(9, 9, 9, 1), Color textColor = Colors.grey}) {
+  Widget _buildIconWithText(IconData icon, String text, {Color iconColor = const Color.fromRGBO(9, 9, 9, 1), Color  textColor = Colors.grey}) {
     return Column(
       children: [
         Icon(icon, size: 50, color: iconColor),

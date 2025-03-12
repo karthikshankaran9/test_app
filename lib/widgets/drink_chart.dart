@@ -11,7 +11,7 @@ class DrinkChart extends StatelessWidget {
       builder: (context, constraints) {
         double barSpacing = constraints.maxWidth / spending.length;
         return SizedBox(
-          height: 250, // Increased height to fully accommodate labels
+          height: 250,
           child: BarChart(
             BarChartData(
               barGroups: List.generate(spending.length, (index) {
@@ -34,7 +34,7 @@ class DrinkChart extends StatelessWidget {
                 bottomTitles: AxisTitles(
                   sideTitles: SideTitles(
                     showTitles: true,
-                    reservedSize: 40, // Increased reserved space to prevent overflow
+                    reservedSize: 40, 
                     getTitlesWidget: (value, meta) {
                       int index = value.toInt();
                       if (index < spending.length) {
@@ -46,7 +46,7 @@ class DrinkChart extends StatelessWidget {
                               height: 15,
                               child: Image.asset(
                                 'images/beer-mug.png',
-                                fit: BoxFit.contain, // Ensures image does not exceed bounds
+                                fit: BoxFit.contain, 
                               ),
                             ),
                             const SizedBox(height: 2),

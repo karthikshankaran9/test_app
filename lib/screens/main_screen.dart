@@ -27,10 +27,12 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: _pages[_selectedIndex],
+    bottomNavigationBar: Container(
+      height: 80, 
+      child: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'Modules'),
@@ -42,7 +44,9 @@ class _MainScreenState extends State<MainScreen> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed, 
       ),
-    );
-  }
+    ),
+  );
+}
 }

@@ -9,7 +9,7 @@ class DrinkBuddyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.blue[900],
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -34,7 +34,6 @@ class DrinkBuddyScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              // Quick Links with Navigation to Existing Screens
               _buildQuickLink(
                   Icons.dashboard, "My Dashboard", context, MainScreen()),
               _buildQuickLink(
@@ -48,10 +47,8 @@ class DrinkBuddyScreen extends StatelessWidget {
                   context,
                    ProfileScreen()),
               const SizedBox(height: 16),
-              // Show More Options
               TextButton(
                 onPressed: () {
-                  // Handle more options
                 },
                 child: const Text(
                   "Show more options",
